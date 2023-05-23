@@ -25,10 +25,7 @@ const Login = () => {
 
   const onSubmit: SubmitHandler<Inputs> = async (body) => {
     try {
-      const { data } = await axios.post(
-        'http://localhost:3000/api/signin',
-        body
-      );
+      const { data } = await axios.post('/api/signin', body);
 
       Cookies.set('userId', data?.id);
       Cookies.set('access_token', data?.access_token);
