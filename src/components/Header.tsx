@@ -27,7 +27,7 @@ const Header = () => {
               Blog
             </Link>
           </li>
-          <li className="header_item">
+          {/* <li className="header_item">
             <Link
               className={`header_link ${
                 pathname === '/account' ? 'active' : ''
@@ -35,6 +35,14 @@ const Header = () => {
               href="/account"
             >
               Account
+            </Link>
+          </li> */}
+          <li className="header_item">
+            <Link
+              className={`header_link ${pathname === '/chat' ? 'active' : ''}`}
+              href="/chat"
+            >
+              Chat
             </Link>
           </li>
         </ul>

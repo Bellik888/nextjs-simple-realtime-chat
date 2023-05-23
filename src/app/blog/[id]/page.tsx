@@ -1,10 +1,22 @@
-import { getPost } from '@/lib/api';
+import { getPost, getPosts } from '@/lib/api';
 
 type Props = {
   params: {
     id: string;
   };
 };
+
+export async function generateStaticParams() {
+  const data = await getPosts();
+
+  return data.map((post: any) => {
+    return {
+      params: {
+        id: `${post.id}`,
+      },
+    };
+  });
+}
 
 async function getData(id: string) {
   const posts = await getPost(id);

@@ -6,4 +6,7 @@ module.exports = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'src/styles')],
   },
+  experimental: {
+    serverComponentsExternalPackages: ['mongoose', 'bcrypt', 'jsonwebtoken'],
+  },
 };
